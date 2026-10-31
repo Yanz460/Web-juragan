@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Global | WebJuragan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="chat-page-body">
+
+  <div class="chat-wrapper">
+    <nav class="navbar" style="margin-bottom: 2rem;">
+      <a href="/" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Balik</a>
+      <div class="logo">CHAT GLOBAL.</div>
+      <button id="logout-btn-chat" class="btn btn-danger">Logout</button>
+    </nav>
+
+    <div class="chat-container" style="height: 70vh;">
+      <div id="chat-box" class="chat-box">
+        <div class="chat-empty">Memuat pesan...</div>
+      </div>
+      
+      <div class="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Ketik pesan lu..." autocomplete="off">
+        <button id="chat-send-btn" class="btn btn-solid"><i class="fa-solid fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
