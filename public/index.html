@@ -4,17 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WebJuragan | Premium Web Services</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <!-- Supabase Library -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
-  <!-- 1. LANDING & LOADING SCREEN (GARIS BAR) -->
+  <!-- 1. LOADING BAR -->
   <div id="loader" class="loader-container">
     <div class="loading-content">
-      <div class="logo-loader">Web<span>Juragan</span></div>
+      <div class="logo-loader">Web<span>Juragan</span>.</div>
       <div class="progress-track">
         <div id="progress-bar" class="progress-fill"></div>
       </div>
@@ -22,71 +21,110 @@
     </div>
   </div>
 
-  <!-- 2. MAIN WEBSITE (Hidden dulu) -->
+  <!-- 2. MAIN WEBSITE -->
   <main id="main-content" class="main-content">
-    <header class="bento-header">
-      <div class="logo">Web<span>Juragan</span></div>
-      
-      <!-- AREA LOGIN -->
-      <div id="auth-area" style="display: flex; gap: 10px; align-items: center;">
-        <!-- Tampilan Sebelum Login -->
-        <div id="before-login" style="display: flex; gap: 10px;">
-          <button id="google-login-btn" class="btn-brutal btn-google">
-            <svg style="width:18px; height:18px; margin-right:8px;" viewBox="0 0 24 24"><path fill="currentColor" d="M21.35,11.1H12.18V13.83H18.69C18.36,17.64 15.19,19.27 12.19,19.27C8.36,19.27 5,16.25 5,12C5,7.9 8.2,4.73 12.2,4.73C15.29,4.73 17.1,6.7 17.1,6.7L19,4.72C19,4.72 16.56,2 12.1,2C6.42,2 2.03,6.8 2.03,12C2.03,17.05 6.16,22 12.25,22C17.6,22 21.5,18.33 21.5,12.91C21.5,11.76 21.35,11.1 21.35,11.1V11.1Z" /></svg>
-            Login Google
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">Web<span>Juragan</span>.</div>
+      <div id="auth-area" class="auth-area">
+        <div id="before-login" class="before-login">
+          <button id="google-login-btn" class="btn btn-outline">
+            <svg style="width:16px; height:16px; margin-right:6px;" viewBox="0 0 24 24"><path fill="currentColor" d="M21.35,11.1H12.18V13.83H18.69C18.36,17.64 15.19,19.27 12.19,19.27C8.36,19.27 5,16.25 5,12C5,7.9 8.2,4.73 12.2,4.73C15.29,4.73 17.1,6.7 17.1,6.7L19,4.72C19,4.72 16.56,2 12.1,2C6.42,2 2.03,6.8 2.03,12C2.03,17.05 6.16,22 12.25,22C17.6,22 21.5,18.33 21.5,12.91C21.5,11.76 21.35,11.1 21.35,11.1V11.1Z" /></svg>
+            Login
           </button>
-          <button id="email-login-btn" class="btn-brutal">Login Email</button>
+          <button id="email-login-btn" class="btn btn-solid">Mulai</button>
         </div>
-
-        <!-- Tampilan Setelah Login -->
-        <div id="after-login" style="display: none; align-items: center; gap: 15px;">
-          <span id="user-email" style="font-size: 0.9rem; color: var(--text-muted); font-weight: 600;"></span>
-          <button id="logout-btn" class="btn-brutal" style="border-color: #ef4444; color: #ef4444;">Logout</button>
+        <div id="after-login" class="after-login" style="display: none;">
+          <span id="user-email" class="user-email"></span>
+          <button id="logout-btn" class="btn btn-danger">Logout</button>
         </div>
       </div>
-    </header>
+    </nav>
 
-    <section class="hero-bento">
-      <h1>Kode Rapi,<br>Desain Mematikan.</h1>
-      <p>Kami membangun website bukan sekadar tampil cantik, tapi dioptimasi untuk performa, kecepatan, dan konversi bisnis lu.</p>
-      <div class="cta-group">
-        <a href="https://wa.me/6281234567890" target="_blank" class="btn-brutal btn-primary">Konsultasi via WA</a>
-        <a href="https://t.me/username_kamu" target="_blank" class="btn-brutal btn-secondary">Telegram</a>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-text">
+        <span class="badge">🚀 Partner Digital Anda</span>
+        <h1>Bikin Web <span class="highlight">Bukan</span> Sekadar Jadi.</h1>
+        <p>Desain anti-pasaran, performa super cepat, dan dikembangkan langsung oleh ahlinya. Kami bantu bisnis lu *stand out* dari kompetitor.</p>
+        <div class="cta-group">
+          <!-- Nomor WA Diupdate -->
+          <a href="https://wa.me/62883123595652" target="_blank" class="btn btn-solid btn-large">Mulai Konsultasi</a>
+          <a href="#portfolio" class="btn btn-outline btn-large">Lihat Karya</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Mockup Web" class="hero-image">
+        <div class="floating-card">
+          <div class="dot green"></div> 100% Custom Code
+        </div>
       </div>
     </section>
 
-    <!-- BENTO GRID PORTFOLIO -->
-    <section class="portfolio-grid" id="portfolio">
-      <div class="bento-item large">
-        <h3>E-Commerce App</h3>
-        <p>Next.js + Tailwind</p>
-        <div class="mockup-placeholder"></div>
+    <!-- Bento Grid Portfolio -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="section-header">
+        <h2>Karya Terbaru.</h2>
+        <p>Beberapa project yang udah kami garap.</p>
       </div>
-      <div class="bento-item tall">
-        <h3>Company Profile</h3>
-        <p>React + Framer Motion</p>
-        <div class="mockup-placeholder"></div>
-      </div>
-      <div class="bento-item">
-        <h3>Landing Page</h3>
-        <p>HTML + CSS + JS</p>
-      </div>
-      <div class="bento-item">
-        <h3>Dashboard Analytics</h3>
-        <p>Vue + Express</p>
+      
+      <div class="bento-grid">
+        <!-- Item 1 (Besar) -->
+        <div class="bento-item large">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Dashboard">
+          <div class="bento-content">
+            <h3>Dashboard Analytics</h3>
+            <p>Vue.js + Express</p>
+          </div>
+        </div>
+        
+        <!-- Item 2 (Tinggi) -->
+        <div class="bento-item tall">
+          <img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=800&auto=format&fit=crop" alt="E-Commerce">
+          <div class="bento-content">
+            <h3>E-Commerce App</h3>
+            <p>Next.js + Tailwind</p>
+          </div>
+        </div>
+
+        <!-- Item 3 (Kecil) -->
+        <div class="bento-item">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="Landing Page">
+          <div class="bento-content">
+            <h3>Landing Page</h3>
+            <p>HTML + CSS + JS</p>
+          </div>
+        </div>
+
+        <!-- Item 4 (Kecil - Tombol Kontak) -->
+        <div class="bento-item">
+          <div class="bento-content-only">
+            <h3>Butuh Web Lu?</h3>
+            <p>Konsultasi gratis via WA atau Telegram.</p>
+            <!-- Nomor WA & Telegram Diupdate -->
+            <a href="https://wa.me/62883123595652" target="_blank" class="btn btn-solid" style="margin-top: 10px; font-size: 0.8rem; padding: 8px 16px; width: 100%;">Chat WA</a>
+            <a href="https://t.me/Miskinluuuu" target="_blank" class="btn btn-outline" style="margin-top: 8px; font-size: 0.8rem; padding: 8px 16px; width: 100%;">Chat Telegram</a>
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 WebJuragan. Dibuat dengan 💚</p>
+    </footer>
   </main>
 
   <!-- MODAL LOGIN EMAIL -->
   <div id="email-modal" class="email-form-container">
     <div class="email-form">
-      <h2 style="margin-bottom: 1rem;">Login via Email</h2>
-      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Kami akan mengirimkan link ajaib (Magic Link) ke email lu.</p>
-      <input type="email" id="email-input" placeholder="Masukkan email lu...">
-      <div style="display: flex; gap: 10px;">
-        <button id="send-magic-link" class="btn-brutal btn-primary" style="flex: 1;">Kirim Link</button>
-        <button id="close-modal" class="btn-brutal" style="flex: 1;">Batal</button>
+      <h2>Login via Email</h2>
+      <p>Kami kirim link login ke email lu.</p>
+      <input type="email" id="email-input" placeholder="email@kamu.com">
+      <div class="modal-actions">
+        <button id="send-magic-link" class="btn btn-solid">Kirim Link</button>
+        <button id="close-modal" class="btn btn-outline">Batal</button>
       </div>
     </div>
   </div>
