@@ -28,6 +28,12 @@
     <!-- Navbar -->
     <nav class="navbar">
       <div class="logo"><i class="fa-solid fa-code"></i> WEBJURAGAN</div>
+      
+      <div class="nav-links" id="nav-links" style="display: none;">
+        <!-- Tombol ini cuma muncul kalau udah login -->
+        <a href="#chat-section" class="btn btn-outline" id="nav-chat-btn"><i class="fa-solid fa-comments"></i> Chat Global</a>
+      </div>
+
       <div id="auth-area" class="auth-area">
         <div id="before-login" class="before-login">
           <button id="google-login-btn" class="btn btn-outline">
@@ -35,7 +41,7 @@
           </button>
           <button id="email-login-btn" class="btn btn-solid">Mulai</button>
         </div>
-        <div id="after-login" class="after-login" style="display: none;">
+        <div id="after-login" class="after-login" style="display: none; align-items: center; gap: 10px;">
           <span id="user-email" class="user-email"></span>
           <button id="logout-btn" class="btn btn-danger">Logout</button>
         </div>
@@ -101,7 +107,7 @@
       </div>
     </section>
 
-    <!-- CHAT GLOBAL SECTION (Disembunyiin dulu, muncul kalau udah login) -->
+    <!-- CHAT GLOBAL SECTION -->
     <section id="chat-section" class="chat-section" style="display: none;">
       <div class="section-header">
         <h2>CHAT GLOBAL.</h2>
@@ -122,7 +128,7 @@
     
   </main>
 
-  <!-- 3. FLOATING SOCIAL BUTTONS -->
+  <!-- FLOATING SOCIAL BUTTONS -->
   <div class="floating-socials">
     <a href="https://wa.me/62883123595652" target="_blank" class="social-btn wa-btn" title="Chat WhatsApp">
       <i class="fa-brands fa-whatsapp"></i>
