@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WebJuragan | Premium Web Services</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
@@ -13,7 +14,7 @@
   <!-- 1. LOADING BAR -->
   <div id="loader" class="loader-container">
     <div class="loading-content">
-      <div class="logo-loader">Web<span>Juragan</span>.</div>
+      <div class="logo-loader">WEBJURAGAN.</div>
       <div class="progress-track">
         <div id="progress-bar" class="progress-fill"></div>
       </div>
@@ -26,12 +27,11 @@
     
     <!-- Navbar -->
     <nav class="navbar">
-      <div class="logo">Web<span>Juragan</span>.</div>
+      <div class="logo"><i class="fa-solid fa-code"></i> WEBJURAGAN</div>
       <div id="auth-area" class="auth-area">
         <div id="before-login" class="before-login">
           <button id="google-login-btn" class="btn btn-outline">
-            <svg style="width:16px; height:16px; margin-right:6px;" viewBox="0 0 24 24"><path fill="currentColor" d="M21.35,11.1H12.18V13.83H18.69C18.36,17.64 15.19,19.27 12.19,19.27C8.36,19.27 5,16.25 5,12C5,7.9 8.2,4.73 12.2,4.73C15.29,4.73 17.1,6.7 17.1,6.7L19,4.72C19,4.72 16.56,2 12.1,2C6.42,2 2.03,6.8 2.03,12C2.03,17.05 6.16,22 12.25,22C17.6,22 21.5,18.33 21.5,12.91C21.5,11.76 21.35,11.1 21.35,11.1V11.1Z" /></svg>
-            Login
+            <i class="fa-brands fa-google"></i> Login
           </button>
           <button id="email-login-btn" class="btn btn-solid">Mulai</button>
         </div>
@@ -45,32 +45,29 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-text">
-        <span class="badge">🚀 Partner Digital Anda</span>
-        <h1>Bikin Web <span class="highlight">Bukan</span> Sekadar Jadi.</h1>
-        <p>Desain anti-pasaran, performa super cepat, dan dikembangkan langsung oleh ahlinya. Kami bantu bisnis lu *stand out* dari kompetitor.</p>
+        <span class="badge"><i class="fa-solid fa-bolt"></i> Partner Digital</span>
+        <h1>BIKIN WEB<br><span class="highlight">NGGAK</span> ASAL JADI.</h1>
+        <p>Desain anti-pasaran, performa super cepat, dikembangkan langsung oleh ahlinya. Kami bantu bisnis lu stand out.</p>
         <div class="cta-group">
-          <!-- Nomor WA Diupdate -->
-          <a href="https://wa.me/62883123595652" target="_blank" class="btn btn-solid btn-large">Mulai Konsultasi</a>
-          <a href="#portfolio" class="btn btn-outline btn-large">Lihat Karya</a>
+          <a href="#portfolio" class="btn btn-solid btn-large">LIHAT KARYA</a>
         </div>
       </div>
       <div class="hero-image-wrapper">
         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Mockup Web" class="hero-image">
         <div class="floating-card">
-          <div class="dot green"></div> 100% Custom Code
+          <i class="fa-solid fa-check"></i> 100% CUSTOM
         </div>
       </div>
     </section>
 
-    <!-- Bento Grid Portfolio -->
+    <!-- Portfolio Bento Grid -->
     <section id="portfolio" class="portfolio-section">
       <div class="section-header">
-        <h2>Karya Terbaru.</h2>
+        <h2>KARYA TERBARU.</h2>
         <p>Beberapa project yang udah kami garap.</p>
       </div>
       
       <div class="bento-grid">
-        <!-- Item 1 (Besar) -->
         <div class="bento-item large">
           <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Dashboard">
           <div class="bento-content">
@@ -79,7 +76,6 @@
           </div>
         </div>
         
-        <!-- Item 2 (Tinggi) -->
         <div class="bento-item tall">
           <img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=800&auto=format&fit=crop" alt="E-Commerce">
           <div class="bento-content">
@@ -88,7 +84,6 @@
           </div>
         </div>
 
-        <!-- Item 3 (Kecil) -->
         <div class="bento-item">
           <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="Landing Page">
           <div class="bento-content">
@@ -97,34 +92,35 @@
           </div>
         </div>
 
-        <!-- Item 4 (Kecil - Tombol Kontak) -->
-        <div class="bento-item">
+        <div class="bento-item contact-box">
           <div class="bento-content-only">
-            <h3>Butuh Web Lu?</h3>
-            <p>Konsultasi gratis via WA atau Telegram.</p>
-            <!-- Nomor WA & Telegram Diupdate -->
-            <a href="https://wa.me/62883123595652" target="_blank" class="btn btn-solid" style="margin-top: 10px; font-size: 0.8rem; padding: 8px 16px; width: 100%;">Chat WA</a>
-            <a href="https://t.me/Miskinluuuu" target="_blank" class="btn btn-outline" style="margin-top: 8px; font-size: 0.8rem; padding: 8px 16px; width: 100%;">Chat Telegram</a>
+            <h3>PUNYA IDE?</h3>
+            <p>Klik logo di pojok kanan bawah.</p>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Footer -->
-    <footer>
-      <p>© 2026 WebJuragan. Dibuat dengan 💚</p>
-    </footer>
   </main>
+
+  <!-- 3. FLOATING SOCIAL BUTTONS -->
+  <div class="floating-socials">
+    <a href="https://wa.me/62883123595652" target="_blank" class="social-btn wa-btn" title="Chat WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="https://t.me/Miskinluuuu" target="_blank" class="social-btn tg-btn" title="Chat Telegram">
+      <i class="fa-brands fa-telegram"></i>
+    </a>
+  </div>
 
   <!-- MODAL LOGIN EMAIL -->
   <div id="email-modal" class="email-form-container">
     <div class="email-form">
-      <h2>Login via Email</h2>
+      <h2>LOGIN EMAIL</h2>
       <p>Kami kirim link login ke email lu.</p>
       <input type="email" id="email-input" placeholder="email@kamu.com">
       <div class="modal-actions">
-        <button id="send-magic-link" class="btn btn-solid">Kirim Link</button>
-        <button id="close-modal" class="btn btn-outline">Batal</button>
+        <button id="send-magic-link" class="btn btn-solid">KIRIM</button>
+        <button id="close-modal" class="btn btn-outline">BATAL</button>
       </div>
     </div>
   </div>
