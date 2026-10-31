@@ -1,12 +1,12 @@
 :root {
-  --bg: #F4F4F0; /* Warna kertas */
+  --bg: #F4F4F0;
   --surface: #FFFFFF;
   --text: #000000;
-  --primary: #FF90E8; /* Pink khas brutalist */
-  --secondary: #FFC900; /* Kuning */
-  --accent: #00E0FF; /* Biru neon */
+  --primary: #FF90E8;
+  --secondary: #FFC900;
+  --accent: #00E0FF;
   --border-width: 3px;
-  --shadow: 6px 6px 0px #000000; /* Shadow kotak hitam pekat */
+  --shadow: 6px 6px 0px #000000;
   --font: 'Space Grotesk', sans-serif;
 }
 
@@ -167,6 +167,32 @@ body {
 }
 .email-form input:focus { outline: none; box-shadow: 4px 4px 0px #000; }
 .modal-actions { display: flex; gap: 10px; }
+
+/* --- CHAT GLOBAL STYLE --- */
+.chat-section { margin-top: 2rem; margin-bottom: 2rem; }
+.chat-container {
+  background: var(--surface); border: var(--border-width) solid #000;
+  box-shadow: var(--shadow); display: flex; flex-direction: column; height: 400px;
+}
+.chat-box {
+  flex: 1; padding: 1.5rem; overflow-y: auto; background: #f9f9f9;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.chat-empty { text-align: center; color: #888; font-weight: 500; margin: auto; }
+.chat-message {
+  background: #fff; padding: 10px 15px; border: 2px solid #000;
+  box-shadow: 3px 3px 0px #000; max-width: 80%; align-self: flex-start;
+}
+.chat-message.my-msg { align-self: flex-end; background: var(--primary); }
+.chat-message .sender { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; margin-bottom: 2px; color: #555; }
+.chat-message .text { font-size: 0.95rem; font-weight: 600; }
+.chat-input-area { display: flex; border-top: var(--border-width) solid #000; }
+.chat-input-area input {
+  flex: 1; padding: 1rem; border: none; font-family: var(--font); font-size: 1rem; font-weight: 600;
+}
+.chat-input-area input:focus { outline: none; background: #fff; }
+.chat-input-area .btn { border: none; border-left: var(--border-width) solid #000; box-shadow: none; padding: 0 25px; border-radius: 0; }
+.chat-input-area .btn:active { transform: none; background: var(--secondary); }
 
 /* Responsive */
 @media (max-width: 900px) {
