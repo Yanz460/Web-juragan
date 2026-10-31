@@ -17,60 +17,45 @@ body {
   overflow-x: hidden;
 }
 
-/* --- 1. ANIMASI LOADING & BLACK HOLE --- */
+/* --- 1. ANIMASI LOADING BAR --- */
 .loader-container {
   position: fixed; inset: 0;
-  background: #000;
+  background: var(--bg);
   display: flex; justify-content: center; align-items: center; flex-direction: column;
   z-index: 9999;
-  transition: opacity 1s ease, visibility 1s;
+  transition: opacity 0.5s ease, visibility 0.5s;
 }
 
-.vortex {
-  position: absolute;
-  width: 300px; height: 300px;
-  border-radius: 50%;
-  border: 2px dashed rgba(255, 255, 255, 0.2);
-  animation: spin 3s linear infinite;
-  box-shadow: 0 0 50px rgba(59, 130, 246, 0.2) inset;
+.loading-content {
+  width: 100%; max-width: 300px;
+  text-align: center;
 }
 
-.vortex::before, .vortex::after {
-  content: ''; position: absolute; inset: 20px;
-  border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.1);
+.logo-loader {
+  font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;
 }
-.vortex::before { animation: spin 2s linear infinite reverse; }
-.vortex::after { inset: 50px; animation: spin 1.5s linear infinite; }
+.logo-loader span { color: var(--primary); }
 
-.loading-text {
-  position: relative; z-index: 10;
-  font-size: 3rem; font-weight: 700;
-  color: #fff; text-shadow: 0 0 20px rgba(255,255,255,0.5);
-  transition: opacity 0.5s ease;
+.progress-track {
+  width: 100%; height: 4px;
+  background: #333; border-radius: 4px;
+  overflow: hidden; margin-bottom: 10px;
 }
 
-.black-hole {
-  position: absolute;
-  width: 0; height: 0;
-  background: #000;
-  border-radius: 50%;
-  transition: all 1.5s cubic-bezier(0.7, 0, 0.3, 1);
-  z-index: 5;
+.progress-fill {
+  height: 100%; width: 0%;
+  background: var(--primary);
+  transition: width 0.1s ease;
+  box-shadow: 0 0 10px var(--primary);
 }
 
-.black-hole.active {
-  width: 300vmax; height: 300vmax;
-  box-shadow: 0 0 100px var(--primary);
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.loading-percent {
+  font-size: 0.85rem; color: var(--text-muted); font-weight: 600;
 }
 
 /* --- 2. UI MAIN CONTENT (Bento) --- */
 .main-content {
-  opacity: 0; transition: opacity 1s ease;
+  opacity: 0; transition: opacity 0.6s ease;
   padding: 2rem; max-width: 1200px; margin: 0 auto;
   display: flex; flex-direction: column; gap: 2rem;
 }
@@ -173,4 +158,4 @@ body {
   .large, .tall { grid-column: span 1; grid-row: span 1; }
   .hero-bento h1 { font-size: 2rem; }
   .bento-header { flex-direction: column; justify-content: center; text-align: center;}
-                }
+  }
