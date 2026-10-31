@@ -29,11 +29,9 @@
     <nav class="navbar">
       <div class="logo"><i class="fa-solid fa-code"></i> WEBJURAGAN</div>
       
-      <!-- Menu yang cuma muncul kalau udah login -->
+      <!-- Menu Chat (Hanya muncul jika login) -->
       <div class="nav-links" id="nav-links" style="display: none;">
-        <a href="#chat-section" class="btn btn-outline" id="nav-chat-btn">
-          <i class="fa-solid fa-comments"></i> Chat Global
-        </a>
+        <a href="/chat.html" class="btn btn-outline"><i class="fa-solid fa-comments"></i> Chat Global</a>
       </div>
 
       <div id="auth-area" class="auth-area">
@@ -108,29 +106,9 @@
         </div>
       </div>
     </section>
-
-    <!-- CHAT GLOBAL SECTION -->
-    <section id="chat-section" class="chat-section" style="display: none;">
-      <div class="section-header">
-        <h2>CHAT GLOBAL.</h2>
-        <p>Ngobrol santai sama pengunjung lain.</p>
-      </div>
-      
-      <div class="chat-container">
-        <div id="chat-box" class="chat-box">
-          <div class="chat-empty">Belum ada pesan. Jadi yang pertama!</div>
-        </div>
-        
-        <div class="chat-input-area">
-          <input type="text" id="chat-input" placeholder="Ketik pesan lu..." autocomplete="off">
-          <button id="chat-send-btn" class="btn btn-solid"><i class="fa-solid fa-paper-plane"></i></button>
-        </div>
-      </div>
-    </section>
-    
   </main>
 
-  <!-- FLOATING SOCIAL BUTTONS -->
+  <!-- FLOATING SOCIAL BUTTONS (Cuma ada di Landing Page) -->
   <div class="floating-socials">
     <a href="https://wa.me/62883123595652" target="_blank" class="social-btn wa-btn" title="Chat WhatsApp">
       <i class="fa-brands fa-whatsapp"></i>
