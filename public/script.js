@@ -1,21 +1,33 @@
 // ==========================================
-// 1. LOGIC LOADING SEDERHANA (ANTI STUCK)
+// 1. LOGIC ANIMASI LOADING BAR (0 - 100%)
 // ==========================================
-document.addEventListener('DOMContentLoaded', () => {
-  const loader = document.getElementById('loader');
-  const mainContent = document.getElementById('main-content');
+let percent = 0;
+const percentText = document.getElementById('percent');
+const progressBar = document.getElementById('progress-bar');
+const loader = document.getElementById('loader');
+const mainContent = document.getElementById('main-content');
+
+const interval = setInterval(() => {
+  // Naik bertahap
+  percent += Math.floor(Math.random() * 10) + 5; 
   
-  // Kasih delay 1 detik biar ada efek "kedip" dikit, terus munculin web
-  setTimeout(() => {
-    if(loader) {
+  if (percent >= 100) {
+    percent = 100;
+    clearInterval(interval);
+    
+    // Selesai loading, sembunyiin bar, munculin web
+    setTimeout(() => {
       loader.style.opacity = '0';
       loader.style.visibility = 'hidden';
-    }
-    if(mainContent) {
       mainContent.classList.add('show');
-    }
-  }, 1000); // 1000 = 1 detik
-});
+    }, 500); // Delay dikit biar mulus
+  }
+  
+  // Update UI
+  percentText.innerText = percent;
+  progressBar.style.width = percent + '%';
+  
+}, 100); // Kecepatan update (semakin kecil semakin cepat)
 
 
 // ==========================================
@@ -29,10 +41,10 @@ let supabaseClient = null;
 
 // Cek apakah URL dan Key udah diisi, biar nggak error
 if (SUPABASE_URL && SUPABASE_ANON_KEY && SUPABASE_ANON_KEY.startsWith('sb_publishable_')) {
-  // Ganti nama jadi supabaseClient biar nggak bentrok sama library
+  // Ganti nama jadi supabaseClient biar nggak bentrok
   supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 } else {
-  console.warn("Supabase URL/Key belum diisi dengan benar. Fitur login dimatikan sementara.");
+  console.warn("Supabase URL/Key belum diisi. Fitur login mati.");
 }
 
 // Elemen DOM
@@ -51,7 +63,7 @@ const closeModalBtn = document.getElementById('close-modal');
 
 // Cek Status Login
 async function checkUser() {
-  if (!supabaseClient) return; // Skip kalau supabase belum di-setup
+  if (!supabaseClient) return;
 
   try {
     const { data: { session } } = await supabaseClient.auth.getSession();
@@ -72,7 +84,7 @@ async function checkUser() {
 // Event: Login Google
 if (googleLoginBtn) {
   googleLoginBtn.onclick = async () => {
-    if (!supabaseClient) return alert("Supabase belum disetting di kode!");
+    if (!supabaseClient) return alert("Supabase belum disetting!");
     await supabaseClient.auth.signInWithOAuth({ 
       provider: 'google',
       options: { redirectTo: window.location.origin }
@@ -97,7 +109,7 @@ if (closeModalBtn) {
 // Event: Kirim Magic Link
 if (sendMagicLinkBtn) {
   sendMagicLinkBtn.onclick = async () => {
-    if (!supabaseClient) return alert("Supabase belum disetting di kode!");
+    if (!supabaseClient) return alert("Supabase belum disetting!");
     
     const email = emailInput.value;
     if (!email) {
@@ -119,7 +131,7 @@ if (sendMagicLinkBtn) {
     if (error) {
       alert("Gagal: " + error.message);
     } else {
-      alert("Cek inbox email lu! Kami udah kirim link buat login.");
+      alert("Cek inbox email lu! Kami udah kirim link login.");
       emailModal.classList.remove('show');
       emailInput.value = '';
     }
