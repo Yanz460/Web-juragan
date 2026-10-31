@@ -38,8 +38,8 @@ const interval = setInterval(() => {
 // 2. LOGIC AUTH (SUPABASE - GOOGLE & EMAIL)
 // ==========================================
 // GANTI DENGAN URL & KEY DARI PROJECT SUPABASE LU
-const SUPABASE_URL = 'https://project-lu.supabase.co';
-const SUPABASE_ANON_KEY = 'isi-anon-key-lu';
+const SUPABASE_URL = 'https://cwqhofeqtnnvipghbyxo.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_cE3jVvjLoY250723gyq0Og_rdBab2Wl';
 
 const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
