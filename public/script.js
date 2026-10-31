@@ -45,7 +45,8 @@ const emailInput = document.getElementById('email-input');
 const sendMagicLinkBtn = document.getElementById('send-magic-link');
 const closeModalBtn = document.getElementById('close-modal');
 
-// Elemen DOM Chat
+// Elemen DOM Chat & Nav
+const navLinks = document.getElementById('nav-links');
 const chatSection = document.getElementById('chat-section');
 const chatBox = document.getElementById('chat-box');
 const chatInput = document.getElementById('chat-input');
@@ -65,12 +66,17 @@ async function checkUser() {
       afterLogin.style.display = 'flex';
       userEmailText.innerText = session.user.email;
       
-      // Munculin Chat & Jalanin Realtime
+      // Munculin Menu Chat di Navbar & Section Chat
+      if (navLinks) navLinks.style.display = 'flex'; 
       chatSection.style.display = 'block';
       initChat(); 
+      
     } else {
       beforeLogin.style.display = 'flex';
       afterLogin.style.display = 'none';
+      
+      // Sembunyiin Menu Chat & Section Chat
+      if (navLinks) navLinks.style.display = 'none';
       chatSection.style.display = 'none';
     }
   } catch (err) {
