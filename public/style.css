@@ -1,0 +1,176 @@
+:root {
+  --bg: #0f0f0f;
+  --surface: #1a1a1a;
+  --border: #333;
+  --text: #f0f0f0;
+  --text-muted: #888;
+  --primary: #3b82f6; /* Biru programmer */
+  --font: 'Poppins', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  overflow-x: hidden;
+}
+
+/* --- 1. ANIMASI LOADING & BLACK HOLE --- */
+.loader-container {
+  position: fixed; inset: 0;
+  background: #000;
+  display: flex; justify-content: center; align-items: center; flex-direction: column;
+  z-index: 9999;
+  transition: opacity 1s ease, visibility 1s;
+}
+
+.vortex {
+  position: absolute;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  animation: spin 3s linear infinite;
+  box-shadow: 0 0 50px rgba(59, 130, 246, 0.2) inset;
+}
+
+.vortex::before, .vortex::after {
+  content: ''; position: absolute; inset: 20px;
+  border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.1);
+}
+.vortex::before { animation: spin 2s linear infinite reverse; }
+.vortex::after { inset: 50px; animation: spin 1.5s linear infinite; }
+
+.loading-text {
+  position: relative; z-index: 10;
+  font-size: 3rem; font-weight: 700;
+  color: #fff; text-shadow: 0 0 20px rgba(255,255,255,0.5);
+  transition: opacity 0.5s ease;
+}
+
+.black-hole {
+  position: absolute;
+  width: 0; height: 0;
+  background: #000;
+  border-radius: 50%;
+  transition: all 1.5s cubic-bezier(0.7, 0, 0.3, 1);
+  z-index: 5;
+}
+
+.black-hole.active {
+  width: 300vmax; height: 300vmax;
+  box-shadow: 0 0 100px var(--primary);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* --- 2. UI MAIN CONTENT (Bento) --- */
+.main-content {
+  opacity: 0; transition: opacity 1s ease;
+  padding: 2rem; max-width: 1200px; margin: 0 auto;
+  display: flex; flex-direction: column; gap: 2rem;
+}
+
+.main-content.show { opacity: 1; }
+
+/* Header */
+.bento-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2rem;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  flex-wrap: wrap; gap: 1rem;
+}
+.logo { font-weight: 700; font-size: 1.2rem; }
+.logo span { color: var(--primary); }
+
+/* Hero */
+.hero-bento {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 4rem 2rem; border-radius: 16px;
+  text-align: center;
+}
+.hero-bento h1 { font-size: 3rem; line-height: 1.2; margin-bottom: 1rem; }
+.hero-bento p { color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem; }
+
+/* Tombol Brutalist / Programmer */
+.btn-brutal {
+  font-family: var(--font); font-weight: 600; font-size: 0.95rem;
+  padding: 10px 20px; border-radius: 8px;
+  border: 2px solid var(--border);
+  background: transparent; color: var(--text);
+  cursor: pointer; transition: all 0.2s;
+  text-decoration: none;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.btn-brutal:hover {
+  border-color: var(--primary);
+  background: rgba(59, 130, 246, 0.1);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px var(--primary);
+}
+.btn-primary { background: var(--primary); color: white; border-color: var(--primary); }
+.btn-primary:hover { box-shadow: 4px 4px 0px #1e3a8a; }
+.btn-google { background: #fff; color: #000; border-color: #fff; }
+.btn-google:hover { background: #f1f5f9; box-shadow: 4px 4px 0px #888; }
+
+.cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* Bento Grid Portfolio */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px;
+  gap: 1rem;
+}
+.bento-item {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 16px; padding: 1.5rem;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  transition: border-color 0.3s;
+  position: relative; overflow: hidden;
+}
+.bento-item:hover { border-color: var(--primary); }
+.bento-item h3 { font-size: 1.2rem; margin-bottom: 0.2rem; z-index: 2;}
+.bento-item p { color: var(--text-muted); font-size: 0.85rem; z-index: 2;}
+
+.large { grid-column: span 2; grid-row: span 2; }
+.tall { grid-column: span 1; grid-row: span 2; }
+
+.mockup-placeholder {
+  position: absolute; inset: 1rem;
+  background: #252525; border-radius: 8px;
+  z-index: 1; opacity: 0.3;
+}
+
+/* Modal Email */
+.email-form-container {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.8);
+  display: none; justify-content: center; align-items: center; z-index: 1000;
+  padding: 20px;
+}
+.email-form-container.show { display: flex; }
+.email-form {
+  background: var(--surface); padding: 2rem; border-radius: 16px;
+  border: 1px solid var(--border); width: 100%; max-width: 400px;
+}
+.email-form input {
+  width: 100%; padding: 12px; margin-bottom: 1rem;
+  background: var(--bg); border: 1px solid var(--border);
+  color: white; border-radius: 8px; font-family: var(--font);
+}
+.email-form input:focus { outline: none; border-color: var(--primary); }
+
+@media (max-width: 768px) {
+  .portfolio-grid { grid-template-columns: 1fr; grid-auto-rows: auto; }
+  .large, .tall { grid-column: span 1; grid-row: span 1; }
+  .hero-bento h1 { font-size: 2rem; }
+  .bento-header { flex-direction: column; justify-content: center; text-align: center;}
+                }
