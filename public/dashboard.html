@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server Monitor | WebJuragan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="chat-page-body" style="background: #111; color: #fff;">
+
+  <div class="chat-wrapper" style="max-width: 1000px;">
+    <nav class="navbar" style="margin-bottom: 2rem; background: #222; border-color: #fff; box-shadow: 6px 6px 0px #fff;">
+      <a href="/" class="btn btn-outline" style="color: #fff; border-color: #fff; box-shadow: 4px 4px 0px #fff;"><i class="fa-solid fa-arrow-left"></i> Balik</a>
+      <div class="logo" style="color: #fff;">SERVER MONITOR.</div>
+      <button id="logout-btn-dash" class="btn btn-danger" style="box-shadow: 4px 4px 0px #fff;">Logout</button>
+    </nav>
+
+    <div class="bento-grid" style="grid-template-columns: repeat(2, 1fr); grid-auto-rows: auto; gap: 1.5rem;">
+      
+      <!-- CPU -->
+      <div class="bento-item" style="border-color: #00E0FF; box-shadow: 6px 6px 0px #00E0FF; background: #222; min-height: auto;">
+        <div style="padding: 2rem;">
+          <h3 style="color: #00E0FF; font-size: 1.5rem; margin-bottom: 1rem;"><i class="fa-solid fa-microchip"></i> CPU Usage</h3>
+          <div id="cpu-value" style="font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem;">0%</div>
+          <div class="progress-track" style="border-color: #00E0FF; background: #333;">
+            <div id="cpu-bar" class="progress-fill" style="width: 0%; background: #00E0FF;"></div>
+          </div>
+          <p style="margin-top: 1rem; color: #aaa;">4 Cores @ 3.2GHz</p>
+        </div>
+      </div>
+
+      <!-- RAM -->
+      <div class="bento-item" style="border-color: #FF90E8; box-shadow: 6px 6px 0px #FF90E8; background: #222; min-height: auto;">
+        <div style="padding: 2rem;">
+          <h3 style="color: #FF90E8; font-size: 1.5rem; margin-bottom: 1rem;"><i class="fa-solid fa-memory"></i> RAM Usage</h3>
+          <div id="ram-value" style="font-size: 3rem; font-weight: 800; margin-bottom: 0.5rem;">0 GB</div>
+          <div class="progress-track" style="border-color: #FF90E8; background: #333;">
+            <div id="ram-bar" class="progress-fill" style="width: 0%; background: #FF90E8;"></div>
+          </div>
+          <p style="margin-top: 1rem; color: #aaa;">4 GB Total</p>
+        </div>
+      </div>
+
+      <!-- GPU -->
+      <div class="bento-item" style="border-color: #FFC900; box-shadow: 6px 6px 0px #FFC900; background: #222; min-height: auto;">
+        <div style="padding: 2rem;">
+          <h3 style="color: #FFC900; font-size: 1.5rem; margin-bottom: 1rem;"><i class="fa-solid fa-gamepad"></i> GPU Status</h3>
+          <div id="gpu-value" style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; color: #FFC900;">IDLE</div>
+          <p style="margin-top: 1rem; color: #aaa;">NVIDIA RTX 3060 (12GB)</p>
+        </div>
+      </div>
+
+      <!-- UPTIME -->
+      <div class="bento-item" style="border-color: #25D366; box-shadow: 6px 6px 0px #25D366; background: #222; min-height: auto;">
+        <div style="padding: 2rem;">
+          <h3 style="color: #25D366; font-size: 1.5rem; margin-bottom: 1rem;"><i class="fa-solid fa-clock"></i> Uptime</h3>
+          <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem;">12d 4h 30m</div>
+          <p style="margin-top: 1rem; color: #aaa;">Status: <span style="color: #25D366; font-weight: bold;">ONLINE</span></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
