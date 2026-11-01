@@ -55,7 +55,7 @@ body {
   flex-wrap: wrap; gap: 1rem;
 }
 .logo { font-size: 1.4rem; font-weight: 800; letter-spacing: -1px; }
-.nav-links { display: flex; gap: 15px; margin-right: auto; margin-left: 2rem; }
+.nav-links { display: flex; gap: 15px; margin-right: auto; margin-left: 2rem; flex-wrap: wrap; }
 .auth-area { display: flex; gap: 10px; align-items: center; }
 .before-login { display: flex; gap: 10px; }
 .user-email { font-size: 0.9rem; font-weight: 700; margin-right: 10px; }
@@ -214,4 +214,9 @@ body {
   .social-btn { width: 50px; height: 50px; font-size: 1.5rem; }
   .chat-wrapper { height: 90vh; }
   .chat-container { height: 100%; }
-}
+  
+  /* Dashboard di HP */
+  .bento-grid[style*="grid-template-columns: repeat(2, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+             }
