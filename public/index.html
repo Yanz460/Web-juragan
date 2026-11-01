@@ -29,7 +29,6 @@
     <nav class="navbar">
       <div class="logo"><i class="fa-solid fa-code"></i> WEBJURAGAN</div>
       
-      <!-- Menu (Muncul jika login) -->
       <div class="nav-links" id="nav-links" style="display: none;">
         <a href="/chat.html" class="btn btn-outline"><i class="fa-solid fa-comments"></i> Chat Global</a>
         <a href="/dashboard.html" class="btn btn-outline"><i class="fa-solid fa-server"></i> Server</a>
@@ -56,6 +55,7 @@
         <h1>BIKIN WEB<br><span class="highlight">NGGAK</span> ASAL JADI.</h1>
         <p>Desain anti-pasaran, performa super cepat, dikembangkan langsung oleh ahlinya. Kami bantu bisnis lu stand out.</p>
         <div class="cta-group">
+          <!-- Tombol arahin ke ID portfolio -->
           <a href="#portfolio" class="btn btn-solid btn-large">LIHAT KARYA</a>
         </div>
       </div>
@@ -67,44 +67,64 @@
       </div>
     </section>
 
-    <!-- Portfolio Bento Grid -->
-    <section id="portfolio" class="portfolio-section">
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" class="portfolio-section" style="scroll-margin-top: 100px;">
       <div class="section-header">
         <h2>KARYA TERBARU.</h2>
-        <p>Beberapa project yang udah kami garap.</p>
+        <p>Beberapa website yang udah kami kembangkan.</p>
       </div>
       
-      <div class="bento-grid">
-        <div class="bento-item large">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Dashboard">
-          <div class="bento-content">
-            <h3>Dashboard Analytics</h3>
-            <p>Vue.js + Express</p>
-          </div>
-        </div>
+      <div class="bento-grid" style="grid-auto-rows: auto;">
         
-        <div class="bento-item tall">
-          <img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=800&auto=format&fit=crop" alt="E-Commerce">
-          <div class="bento-content">
-            <h3>E-Commerce App</h3>
-            <p>Next.js + Tailwind</p>
+        <!-- KARTU PROJECT 1 (WebJuragan) -->
+        <div class="bento-item large" style="display: flex; flex-direction: column; background: #fff; padding: 0;">
+          <div style="height: 250px; width: 100%; border-bottom: 3px solid #000; background: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop') center/cover;"></div>
+          
+          <div class="bento-content" style="position: static; border-top: none; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+            <div>
+              <h3>WebJuragan</h3>
+              <p>Web Jasa Pembuatan Website</p>
+            </div>
+            <a href="https://webjuragan.ccwu.cc" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: fit-content;">Kunjungi Web <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
           </div>
         </div>
 
-        <div class="bento-item">
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop" alt="Landing Page">
-          <div class="bento-content">
-            <h3>Landing Page</h3>
-            <p>HTML + CSS + JS</p>
+        <!-- KARTU PROJECT 2 (Game Boost) - BARU DITAMBAHIN -->
+        <div class="bento-item tall" style="display: flex; flex-direction: column; background: #fff; padding: 0;">
+          <!-- Gambar sementara pakai gambar gaming/neon -->
+          <div style="height: 200px; width: 100%; border-bottom: 3px solid #000; background: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop') center/cover;"></div>
+          
+          <div class="bento-content" style="position: static; border-top: none; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; height: 100%; background: var(--accent);">
+            <div>
+              <h3>Game Boost</h3>
+              <p>Jasa Joki & Boost Game</p>
+            </div>
+            <a href="https://game-boost.vercel.app/" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: fit-content; background: #fff;">Kunjungi Web <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
           </div>
         </div>
 
-        <div class="bento-item contact-box">
+        <!-- KARTU PROJECT 3 -->
+        <div class="bento-item" style="display: flex; flex-direction: column; background: #fff; padding: 0;">
+          <div style="height: 150px; width: 100%; border-bottom: 3px solid #000; background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop') center/cover;"></div>
+          
+          <div class="bento-content" style="position: static; border-top: none; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+            <div>
+              <h3>Dashboard Analytics</h3>
+              <p>Vue.js + Express</p>
+            </div>
+            <a href="#" class="btn btn-outline" style="margin-top: 1rem; width: fit-content;">Kunjungi Web <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+
+        <!-- KARTU AJAKAN -->
+        <div class="bento-item" style="background: var(--secondary);">
           <div class="bento-content-only">
-            <h3>PUNYA IDE?</h3>
-            <p>Klik logo di pojok kanan bawah.</p>
+            <h3>WEB LU BUTUH?</h3>
+            <p>Konsultasi gratis sekarang.</p>
+            <a href="https://wa.me/62883123595652" target="_blank" class="btn btn-solid" style="margin-top: 1rem; width: 100%;">Chat WA</a>
           </div>
         </div>
+
       </div>
     </section>
   </main>
@@ -134,4 +154,4 @@
 
   <script src="script.js"></script>
 </body>
-  </html>
+</html>
