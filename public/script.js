@@ -11,11 +11,12 @@ if (SUPABASE_URL && SUPABASE_ANON_KEY && SUPABASE_ANON_KEY.startsWith('sb_publis
 
 // Deteksi halaman
 const isChatPage = window.location.pathname.includes('chat.html');
+const isDashPage = window.location.pathname.includes('dashboard.html');
 
 // ==========================================
 // 2. LOGIC HALAMAN UTAMA (index.html)
 // ==========================================
-if (!isChatPage) {
+if (!isChatPage && !isDashPage) {
   // Animasi Loading
   let percent = 0;
   const percentText = document.getElementById('percent');
@@ -138,14 +139,18 @@ if (isChatPage) {
 
   async function initChat(myEmail) {
     if (!supabaseClient) return;
-    const { data } = await supabaseClient.from('messages').select('*').order('id', { ascending: true }).limit(50);
+    // Ambil riwayat chat
+    const { data } = await supabaseClient.from('messages').select('*').order('created_at', { ascending: true }).limit(50);
     if (data) {
-      if (data.length === 0) chatBox.innerHTML = '<div class="chat-empty">Belum ada pesan. Jadi yang pertama!</div>';
-      else {
+      if (data.length === 0) {
+        chatBox.innerHTML = '<div class="chat-empty">Belum ada pesan. Jadi yang pertama!</div>';
+      } else {
         chatBox.innerHTML = '';
         data.forEach(msg => appendMessage(msg.user_email, msg.message, msg.user_email === myEmail));
       }
     }
+    
+    // Realtime Listener
     supabaseClient.channel('public:messages')
       .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'messages' }, payload => {
         const newMsg = payload.new;
@@ -161,9 +166,11 @@ if (isChatPage) {
       if (!text) return;
       const { data: { user } } = await supabaseClient.auth.getUser();
       if (!user) return alert("Sesi login habis, silakan login ulang.");
+      
       chatSendBtn.disabled = true;
       const { error } = await supabaseClient.from('messages').insert([{ user_email: user.email, message: text }]);
       chatSendBtn.disabled = false;
+      
       if (error) alert("Gagal kirim: " + error.message);
       else chatInput.value = ''; 
     };
@@ -185,7 +192,48 @@ if (isChatPage) {
 }
 
 // ==========================================
-// 4. EFEK PARTIKEL (BERLAKU DI SEMUA HALAMAN)
+// 4. LOGIC HALAMAN DASHBOARD (dashboard.html)
+// ==========================================
+if (isDashPage) {
+  const logoutBtnDash = document.getElementById('logout-btn-dash');
+
+  // Animasi Simulasi CPU/RAM
+  function simulateServer() {
+    const cpuVal = document.getElementById('cpu-value');
+    const cpuBar = document.getElementById('cpu-bar');
+    const ramVal = document.getElementById('ram-value');
+    const ramBar = document.getElementById('ram-bar');
+    const gpuVal = document.getElementById('gpu-value');
+
+    setInterval(() => {
+      // Simulasi CPU (10% - 85%)
+      const cpu = Math.floor(Math.random() * 75) + 10;
+      cpuVal.innerText = cpu + '%';
+      cpuBar.style.width = cpu + '%';
+
+      // Simulasi RAM (1.0 GB - 3.8 GB)
+      const ram = (Math.random() * 2.8 + 1.0).toFixed(1);
+      const ramPercent = (ram / 4) * 100;
+      ramVal.innerText = ram + ' GB';
+      ramBar.style.width = ramPercent + '%';
+
+      // Simulasi GPU (IDLE / ACTIVE)
+      gpuVal.innerText = Math.random() > 0.7 ? 'ACTIVE' : 'IDLE';
+    }, 2000); // Update tiap 2 detik
+  }
+  simulateServer();
+
+  if (logoutBtnDash) {
+    logoutBtnDash.onclick = async () => {
+      if (!supabaseClient) return;
+      await supabaseClient.auth.signOut();
+      window.location.href = '/';
+    };
+  }
+}
+
+// ==========================================
+// 5. EFEK PARTIKEL (BERLAKU DI SEMUA HALAMAN)
 // ==========================================
 document.addEventListener('click', function(e) {
   const colors = ['#FF90E8', '#FFC900', '#00E0FF', '#000000', '#25D366']; 
@@ -215,4 +263,4 @@ function createParticle(x, y, colors) {
   ], { duration: Math.random() * 400 + 400, easing: 'cubic-bezier(0, .9, .57, 1)' });
 
   animation.onfinish = () => particle.remove();
-                   }
+}
