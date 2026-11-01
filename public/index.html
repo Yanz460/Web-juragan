@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <!-- 1. LOADING BAR (Disembunyiin biar gk ngeblok) -->
+  <!-- LOADING BAR -->
   <div id="loader" class="loader-container" style="display: none;">
     <div class="loading-content">
       <div class="logo-loader">WEBJURAGAN.</div>
@@ -22,7 +22,6 @@
     </div>
   </div>
 
-  <!-- 2. MAIN WEBSITE (Langsung muncul) -->
   <main id="main-content" class="main-content show">
     
     <!-- Navbar -->
@@ -48,70 +47,20 @@
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-text">
+    <!-- Hero Section (Landing Utama) -->
+    <section class="hero" style="min-height: 70vh; display: flex; flex-direction: column; justify-content: center;">
+      <div class="hero-text" style="text-align: center; max-width: 800px; margin: 0 auto;">
         <span class="badge"><i class="fa-solid fa-bolt"></i> Partner Digital</span>
-        <h1>BIKIN WEB<br><span class="highlight">NGGAK</span> ASAL JADI.</h1>
-        <p>Desain anti-pasaran, performa super cepat, dikembangkan langsung oleh ahlinya. Kami bantu bisnis lu stand out.</p>
-        <div class="cta-group">
-          <a href="#portfolio" class="btn btn-solid btn-large">LIHAT KARYA</a>
-        </div>
-      </div>
-      <div class="hero-image-wrapper">
-        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Mockup Web" class="hero-image">
-        <div class="floating-card">
-          <i class="fa-solid fa-check"></i> 100% CUSTOM
+        <h1 style="font-size: 4.5rem;">BIKIN WEB<br><span class="highlight">NGGAK</span> ASAL JADI.</h1>
+        <p style="font-size: 1.2rem; margin-bottom: 2.5rem;">Desain anti-pasaran, performa super cepat, dikembangkan langsung oleh ahlinya. Kami bantu bisnis lu stand out.</p>
+        <div class="cta-group" style="justify-content: center; display: flex; gap: 1rem;">
+          <!-- Tombol ini ngarah ke halaman portfolio.html -->
+          <a href="/portfolio.html" class="btn btn-solid btn-large">LIHAT KARYA <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="https://wa.me/62883123595652" class="btn btn-outline btn-large">KONSULTASI</a>
         </div>
       </div>
     </section>
 
-    <!-- PORTFOLIO SECTION -->
-    <section id="portfolio" class="portfolio-section" style="scroll-margin-top: 100px;">
-      <div class="section-header">
-        <h2>KARYA TERBARU.</h2>
-        <p>Beberapa website yang udah kami kembangkan.</p>
-      </div>
-      
-      <div class="bento-grid" style="grid-auto-rows: auto;">
-        
-        <!-- KARTU PROJECT 1 (WebJuragan) -->
-        <div class="bento-item large" style="display: flex; flex-direction: column; background: #fff; padding: 0;">
-          <div style="height: 250px; width: 100%; border-bottom: 3px solid #000; background: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop') center/cover;"></div>
-          
-          <div class="bento-content" style="position: static; border-top: none; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-            <div>
-              <h3>WebJuragan</h3>
-              <p>Web Jasa Pembuatan Website</p>
-            </div>
-            <a href="https://webjuragan.ccwu.cc" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: fit-content;">Kunjungi Web <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-        </div>
-
-        <!-- KARTU PROJECT 2 (Game Boost) -->
-        <div class="bento-item tall" style="display: flex; flex-direction: column; background: #fff; padding: 0;">
-          <div style="height: 200px; width: 100%; border-bottom: 3px solid #000; background: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop') center/cover;"></div>
-          
-          <div class="bento-content" style="position: static; border-top: none; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; height: 100%; background: var(--accent);">
-            <div>
-              <h3>Game Boost</h3>
-              <p>Jasa Joki & Boost Game</p>
-            </div>
-            <a href="https://game-boost.vercel.app/" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: fit-content; background: #fff;">Kunjungi Web <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-        </div>
-
-        <!-- KARTU AJAKAN -->
-        <div class="bento-item" style="background: var(--secondary);">
-          <div class="bento-content-only">
-            <h3>WEB LU BUTUH?</h3>
-            <p>Konsultasi gratis sekarang.</p>
-            <a href="https://wa.me/62883123595652" target="_blank" class="btn btn-solid" style="margin-top: 1rem; width: 100%;">Chat WA</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
   </main>
 
   <!-- FLOATING SOCIAL BUTTONS -->
