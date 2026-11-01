@@ -17,29 +17,16 @@ const isDashPage = window.location.pathname.includes('dashboard.html');
 // 2. LOGIC HALAMAN UTAMA (index.html)
 // ==========================================
 if (!isChatPage && !isDashPage) {
-  // Animasi Loading
-  let percent = 0;
-  const percentText = document.getElementById('percent');
-  const progressBar = document.getElementById('progress-bar');
-  const loader = document.getElementById('loader');
-  const mainContent = document.getElementById('main-content');
-
-  if (percentText) {
-    const interval = setInterval(() => {
-      percent += Math.floor(Math.random() * 10) + 5; 
-      if (percent >= 100) {
-        percent = 100;
-        clearInterval(interval);
-        setTimeout(() => {
-          loader.style.opacity = '0';
-          loader.style.visibility = 'hidden';
-          mainContent.classList.add('show');
-        }, 500);
+  // --- FITUR SMOOTH SCROLL (BIAR TOMBOL LIHAT KARYA JALAN) ---
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-      percentText.innerText = percent;
-      progressBar.style.width = percent + '%';
-    }, 100);
-  }
+    });
+  });
 
   // Elemen DOM Auth
   const beforeLogin = document.getElementById('before-login');
@@ -139,18 +126,15 @@ if (isChatPage) {
 
   async function initChat(myEmail) {
     if (!supabaseClient) return;
-    // Ambil riwayat chat
     const { data } = await supabaseClient.from('messages').select('*').order('created_at', { ascending: true }).limit(50);
     if (data) {
-      if (data.length === 0) {
-        chatBox.innerHTML = '<div class="chat-empty">Belum ada pesan. Jadi yang pertama!</div>';
-      } else {
+      if (data.length === 0) chatBox.innerHTML = '<div class="chat-empty">Belum ada pesan. Jadi yang pertama!</div>';
+      else {
         chatBox.innerHTML = '';
         data.forEach(msg => appendMessage(msg.user_email, msg.message, msg.user_email === myEmail));
       }
     }
     
-    // Realtime Listener
     supabaseClient.channel('public:messages')
       .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'messages' }, payload => {
         const newMsg = payload.new;
@@ -197,7 +181,6 @@ if (isChatPage) {
 if (isDashPage) {
   const logoutBtnDash = document.getElementById('logout-btn-dash');
 
-  // Animasi Simulasi CPU/RAM
   function simulateServer() {
     const cpuVal = document.getElementById('cpu-value');
     const cpuBar = document.getElementById('cpu-bar');
@@ -206,20 +189,17 @@ if (isDashPage) {
     const gpuVal = document.getElementById('gpu-value');
 
     setInterval(() => {
-      // Simulasi CPU (10% - 85%)
       const cpu = Math.floor(Math.random() * 75) + 10;
       cpuVal.innerText = cpu + '%';
       cpuBar.style.width = cpu + '%';
 
-      // Simulasi RAM (1.0 GB - 3.8 GB)
       const ram = (Math.random() * 2.8 + 1.0).toFixed(1);
       const ramPercent = (ram / 4) * 100;
       ramVal.innerText = ram + ' GB';
       ramBar.style.width = ramPercent + '%';
 
-      // Simulasi GPU (IDLE / ACTIVE)
       gpuVal.innerText = Math.random() > 0.7 ? 'ACTIVE' : 'IDLE';
-    }, 2000); // Update tiap 2 detik
+    }, 2000); 
   }
   simulateServer();
 
