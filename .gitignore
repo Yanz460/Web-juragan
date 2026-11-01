@@ -1,0 +1,24 @@
+# Dependencies (Folder ini berat dan nggak perlu di-upload)
+node_modules/
+package-lock.json
+
+# Environment Variables (INI YANG PALING PENTING)
+# Jangan pernah upload file ini karena isinya password/secret key asli
+.env
+.env.local
+.env.development
+.env.production
+
+# File sistem & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs (Biar repo lu bersih)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Vercel (Folder ini dibikin otomatis sama Vercel)
+.vercel/
