@@ -11,8 +11,8 @@
 </head>
 <body>
 
-  <!-- 1. LOADING BAR -->
-  <div id="loader" class="loader-container">
+  <!-- 1. LOADING BAR (Disembunyiin biar gk ngeblok) -->
+  <div id="loader" class="loader-container" style="display: none;">
     <div class="loading-content">
       <div class="logo-loader">WEBJURAGAN.</div>
       <div class="progress-track">
@@ -22,8 +22,8 @@
     </div>
   </div>
 
-  <!-- 2. MAIN WEBSITE -->
-  <main id="main-content" class="main-content">
+  <!-- 2. MAIN WEBSITE (Langsung muncul) -->
+  <main id="main-content" class="main-content show">
     
     <!-- Navbar -->
     <nav class="navbar">
@@ -55,7 +55,6 @@
         <h1>BIKIN WEB<br><span class="highlight">NGGAK</span> ASAL JADI.</h1>
         <p>Desain anti-pasaran, performa super cepat, dikembangkan langsung oleh ahlinya. Kami bantu bisnis lu stand out.</p>
         <div class="cta-group">
-          <!-- Tombol arahin ke ID portfolio -->
           <a href="#portfolio" class="btn btn-solid btn-large">LIHAT KARYA</a>
         </div>
       </div>
@@ -89,9 +88,8 @@
           </div>
         </div>
 
-        <!-- KARTU PROJECT 2 (Game Boost) - BARU DITAMBAHIN -->
+        <!-- KARTU PROJECT 2 (Game Boost) -->
         <div class="bento-item tall" style="display: flex; flex-direction: column; background: #fff; padding: 0;">
-          <!-- Gambar sementara pakai gambar gaming/neon -->
           <div style="height: 200px; width: 100%; border-bottom: 3px solid #000; background: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop') center/cover;"></div>
           
           <div class="bento-content" style="position: static; border-top: none; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; height: 100%; background: var(--accent);">
@@ -100,19 +98,6 @@
               <p>Jasa Joki & Boost Game</p>
             </div>
             <a href="https://game-boost.vercel.app/" target="_blank" class="btn btn-outline" style="margin-top: 1rem; width: fit-content; background: #fff;">Kunjungi Web <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-        </div>
-
-        <!-- KARTU PROJECT 3 -->
-        <div class="bento-item" style="display: flex; flex-direction: column; background: #fff; padding: 0;">
-          <div style="height: 150px; width: 100%; border-bottom: 3px solid #000; background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop') center/cover;"></div>
-          
-          <div class="bento-content" style="position: static; border-top: none; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-            <div>
-              <h3>Dashboard Analytics</h3>
-              <p>Vue.js + Express</p>
-            </div>
-            <a href="#" class="btn btn-outline" style="margin-top: 1rem; width: fit-content;">Kunjungi Web <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
           </div>
         </div>
 
