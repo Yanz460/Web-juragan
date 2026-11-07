@@ -11,75 +11,98 @@
 </head>
 <body>
 
-  <main class="main-content show" style="max-width: 900px; margin: 0 auto; padding: 1rem;">
+  <main class="main-content show">
     
-    <!-- Navbar -->
-    <nav class="navbar" style="margin-bottom: 2rem;">
+    <nav class="navbar">
       <a href="/" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Balik</a>
       <div class="logo">PORTFOLIO.</div>
-      <div style="width: 80px;"></div> 
+      <div style="width: 90px;"></div> 
     </nav>
 
-    <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio-section">
       <div class="section-header">
         <h2>KARYA TERBARU.</h2>
         <p>Beberapa website yang udah kami kembangkan.</p>
       </div>
       
-      <!-- Container List (1 Kolom ke bawah) -->
-      <div style="display: flex; flex-direction: column; gap: 2rem;">
+      <!-- SKELETON LOADER -->
+      <div id="skeleton-container" class="portfolio-list">
+        <div class="card-project">
+          <div class="skeleton skeleton-image"></div>
+          <div class="card-content"><div class="skeleton skeleton-title"></div><div class="skeleton skeleton-text"></div></div>
+        </div>
+        <div class="card-project">
+          <div class="skeleton skeleton-image"></div>
+          <div class="card-content"><div class="skeleton skeleton-title"></div><div class="skeleton skeleton-text"></div></div>
+        </div>
+      </div>
+
+      <!-- KONTEN ASLI -->
+      <div id="real-content" class="portfolio-list" style="display: none;">
         
-        <!-- PROJECT 1 (WebJuragan) -->
-        <div style="background: #fff; border: 3px solid #000; box-shadow: 6px 6px 0px #000; display: flex; flex-direction: column;">
-          <div style="height: 250px; width: 100%; border-bottom: 3px solid #000; background: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop') center/cover;"></div>
-          <div style="padding: 1.5rem; background: var(--primary);">
-            <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">WebJuragan</h3>
-            <p style="font-weight: 600; margin-bottom: 1.5rem;">Web Jasa Pembuatan Website</p>
-            <a href="https://webjuragan.ccwu.cc" target="_blank" class="btn btn-outline" style="background: #fff;">Kunjungi Web <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <div class="card-project">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" class="card-image" alt="WebJuragan">
+          <div class="card-content">
+            <h3>WebJuragan</h3>
+            <p>Web Jasa Pembuatan Website</p>
+            <a href="https://webjuragan.ccwu.cc" target="_blank" class="btn btn-solid" style="width: fit-content;">Kunjungi Web <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
           </div>
         </div>
 
-        <!-- PROJECT 2 (Game Boost) -->
-        <div style="background: #fff; border: 3px solid #000; box-shadow: 6px 6px 0px #000; display: flex; flex-direction: column;">
-          <div style="height: 250px; width: 100%; border-bottom: 3px solid #000; background: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop') center/cover;"></div>
-          <div style="padding: 1.5rem; background: var(--accent);">
-            <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">Game Boost</h3>
-            <p style="font-weight: 600; margin-bottom: 1.5rem;">Jasa Joki & Boost Game</p>
-            <a href="https://game-boost.vercel.app/" target="_blank" class="btn btn-outline" style="background: #fff;">Kunjungi Web <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <div class="card-project">
+          <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop" class="card-image" alt="Game Boost">
+          <div class="card-content">
+            <h3>Game Boost</h3>
+            <p>Jasa Joki & Boost Game</p>
+            <a href="https://game-boost.vercel.app/" target="_blank" class="btn btn-solid" style="width: fit-content;">Kunjungi Web <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
           </div>
         </div>
 
-        <!-- PROJECT 3 (OmniPlayer) -->
-        <div style="background: #fff; border: 3px solid #000; box-shadow: 6px 6px 0px #000; display: flex; flex-direction: column;">
-          <div style="height: 250px; width: 100%; border-bottom: 3px solid #000; background: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop') center/cover;"></div>
-          <div style="padding: 1.5rem; background: #fff;">
-            <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">OmniPlayer Music</h3>
-            <p style="font-weight: 600; margin-bottom: 1.5rem;">Platform Pemutar Musik</p>
-            <a href="https://omniplayermusic.web.id/" target="_blank" class="btn btn-outline">Kunjungi Web <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <div class="card-project">
+          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop" class="card-image" alt="OmniPlayer Music">
+          <div class="card-content">
+            <h3>OmniPlayer Music</h3>
+            <p>Platform Pemutar Musik</p>
+            <a href="https://omniplayermusic.web.id/" target="_blank" class="btn btn-solid" style="width: fit-content;">Kunjungi Web <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
           </div>
         </div>
 
-        <!-- PROJECT 4 (Afrijal) -->
-        <div style="background: #fff; border: 3px solid #000; box-shadow: 6px 6px 0px #000; display: flex; flex-direction: column;">
-          <div style="height: 250px; width: 100%; border-bottom: 3px solid #000; background: url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800&auto=format&fit=crop') center/cover;"></div>
-          <div style="padding: 1.5rem; background: var(--secondary);">
-            <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem;">Afrijal</h3>
-            <p style="font-weight: 600; margin-bottom: 1.5rem;">Website Portofolio / Personal</p>
-            <a href="https://afrijal.vercel.app/" target="_blank" class="btn btn-outline" style="background: #fff;">Kunjungi Web <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <div class="card-project">
+          <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800&auto=format&fit=crop" class="card-image" alt="Afrijal">
+          <div class="card-content">
+            <h3>Afrijal</h3>
+            <p>Website Portofolio / Personal</p>
+            <a href="https://afrijal.vercel.app/" target="_blank" class="btn btn-solid" style="width: fit-content;">Kunjungi Web <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
           </div>
         </div>
 
-        <!-- AJAKAN -->
-        <div style="background: #000; border: 3px solid #000; box-shadow: 6px 6px 0px #888; color: #fff; padding: 3rem 1.5rem; text-align: center;">
-          <h3 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 0.5rem;">WEB LU BUTUH?</h3>
-          <p style="margin-bottom: 1.5rem; color: #aaa;">Konsultasi gratis sekarang.</p>
-          <a href="https://wa.me/62883123595652" target="_blank" class="btn btn-solid" style="display: inline-flex;">Chat WA Sekarang <i class="fa-brands fa-whatsapp"></i></a>
+        <div style="background: var(--text); border: var(--border-width) solid var(--border); box-shadow: var(--shadow); color: #fff; padding: 4rem 2rem; text-align: center; margin-top: 2rem;">
+          <h3 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">WEB LU BUTUH?</h3>
+          <p style="margin-bottom: 2rem; color: #ccc; font-size: 1.2rem;">Konsultasi gratis sekarang.</p>
+          <a href="https://wa.me/62883123595652" target="_blank" class="btn btn-solid" style="display: inline-flex; background: var(--primary); color: #000;">Chat WA Sekarang <i class="fa-brands fa-whatsapp"></i></a>
         </div>
 
       </div>
     </section>
   </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.getElementById('skeleton-container').style.display = 'none';
+        const realContent = document.getElementById('real-content');
+        realContent.style.display = 'flex';
+        realContent.style.animation = 'fadeIn 0.5s ease forwards';
+      }, 1000);
+    });
+  </script>
+  
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 
   <script src="script.js"></script>
 </body>
