@@ -11,33 +11,25 @@
 </head>
 <body>
 
-  <!-- LOADING BAR -->
   <div id="loader" class="loader-container" style="display: none;">
     <div class="loading-content">
       <div class="logo-loader">WEBJURAGAN.</div>
-      <div class="progress-track">
-        <div id="progress-bar" class="progress-fill"></div>
-      </div>
+      <div class="progress-track"><div id="progress-bar" class="progress-fill"></div></div>
       <div class="loading-percent"><span id="percent">0</span>%</div>
     </div>
   </div>
 
   <main id="main-content" class="main-content show">
     
-    <!-- Navbar -->
     <nav class="navbar">
       <div class="logo"><i class="fa-solid fa-code"></i> WEBJURAGAN</div>
-      
       <div class="nav-links" id="nav-links" style="display: none;">
         <a href="/chat.html" class="btn btn-outline"><i class="fa-solid fa-comments"></i> Chat Global</a>
         <a href="/dashboard.html" class="btn btn-outline"><i class="fa-solid fa-server"></i> Server</a>
       </div>
-
       <div id="auth-area" class="auth-area">
         <div id="before-login" class="before-login">
-          <button id="google-login-btn" class="btn btn-outline">
-            <i class="fa-brands fa-google"></i> Login
-          </button>
+          <button id="google-login-btn" class="btn btn-outline"><i class="fa-brands fa-google"></i> Login</button>
           <button id="email-login-btn" class="btn btn-solid">Mulai</button>
         </div>
         <div id="after-login" class="after-login" style="display: none; align-items: center; gap: 10px;">
@@ -47,33 +39,31 @@
       </div>
     </nav>
 
-    <!-- Hero Section (Landing Utama) -->
-    <section class="hero" style="min-height: 70vh; display: flex; flex-direction: column; justify-content: center;">
-      <div class="hero-text" style="text-align: center; max-width: 800px; margin: 0 auto;">
+    <section class="hero">
+      <div class="hero-text">
         <span class="badge"><i class="fa-solid fa-bolt"></i> Partner Digital</span>
-        <h1 style="font-size: 4.5rem;">BIKIN WEB<br><span class="highlight">NGGAK</span> ASAL JADI.</h1>
-        <p style="font-size: 1.2rem; margin-bottom: 2.5rem;">Desain anti-pasaran, performa super cepat, dikembangkan langsung oleh ahlinya. Kami bantu bisnis lu stand out.</p>
-        <div class="cta-group" style="justify-content: center; display: flex; gap: 1rem;">
-          <!-- Tombol ini ngarah ke halaman portfolio.html -->
+        <h1>BIKIN WEB<br><span class="highlight">NGGAK</span> ASAL JADI.</h1>
+        <p>Desain anti-pasaran, performa super cepat, dikembangkan langsung oleh ahlinya. Kami bantu bisnis lu stand out.</p>
+        <div class="cta-group">
           <a href="/portfolio.html" class="btn btn-solid btn-large">LIHAT KARYA <i class="fa-solid fa-arrow-right"></i></a>
           <a href="https://wa.me/62883123595652" class="btn btn-outline btn-large">KONSULTASI</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Mockup Web" class="hero-image">
+        <div class="floating-card">
+          <i class="fa-solid fa-check"></i> 100% CUSTOM
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FLOATING SOCIAL BUTTONS -->
   <div class="floating-socials">
-    <a href="https://wa.me/62883123595652" target="_blank" class="social-btn wa-btn" title="Chat WhatsApp">
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
-    <a href="https://t.me/Miskinluuuu" target="_blank" class="social-btn tg-btn" title="Chat Telegram">
-      <i class="fa-brands fa-telegram"></i>
-    </a>
+    <a href="https://wa.me/62883123595652" target="_blank" class="social-btn wa-btn" title="Chat WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://t.me/Miskinluuuu" target="_blank" class="social-btn tg-btn" title="Chat Telegram"><i class="fa-brands fa-telegram"></i></a>
   </div>
 
-  <!-- MODAL LOGIN EMAIL -->
   <div id="email-modal" class="email-form-container">
     <div class="email-form">
       <h2>LOGIN EMAIL</h2>
